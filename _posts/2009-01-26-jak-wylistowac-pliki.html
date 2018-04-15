@@ -1,0 +1,13 @@
+---
+layout: post
+title: Jak wylistować pliki…
+date: '2009-01-26T00:24:00.000+01:00'
+author: kaarol
+tags:
+- PowerShell
+modified_time: '2015-02-23T23:51:44.812+01:00'
+blogger_id: tag:blogger.com,1999:blog-1272990746006552071.post-2593034693379769693
+blogger_orig_url: http://www.it-flow.pl/2009/01/jak-wylistowac-pliki.html
+---
+
+Tak się dziś zastanawiałem jak wygląda wylistowanie plików do których użytkownik XYZ ma jakieś uprawnienia. Da się to dość łatwo zrobić za pomocą vbs lub zwykłego batch’a jednak od pewnego czasu kaleczę trochę w PowerShellu i jeśli tylko mam okazję to staram się go zaprzęgnąć do pracy:)<br/><pre lang="PowerShell"> get-childitem d:\Code -recurse | get-acl |select-object path, accesstostring | where-object {$_.AccessToString -like "*XYZ*"}</pre>

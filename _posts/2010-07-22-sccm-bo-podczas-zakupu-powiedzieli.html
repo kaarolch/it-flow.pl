@@ -1,0 +1,13 @@
+---
+layout: post
+title: SCCM – Bo podczas zakupu powiedzieli …
+date: '2010-07-22T02:11:00.000+02:00'
+author: kaarol
+tags:
+- SCCM
+modified_time: '2015-02-23T23:51:46.028+01:00'
+blogger_id: tag:blogger.com,1999:blog-1272990746006552071.post-7793954902661470068
+blogger_orig_url: http://www.it-flow.pl/2010/07/sccm-bo-podczas-zakupu-powiedzieli.html
+---
+
+<p>Ostatnimi czasy zdarza mi się doradzać czy też może prowadzić jakieś dłuższe uzasadnienia dlaczego SCCM to jednak przydatne narzędzie. Niestety w przypadku niektórych osób nie jest to łatwe, szczególnie gdy ktoś wydaje sporo na software, przy którym administrator spędza kilka godzin tylko po to by zainstalować jedną paczkę. Niestety jak to zwykle bywa, na konferencjach czy prezentacjach często stykamy się z hasłami:</p>  <ul>   <li>&#160;<em>“Pamięta Pan jak administrator tłumaczył się, że nie może zdalnie zainstalować tego oprogramowania na waszych 600 komputerach ponieważ producent nie udostępnił paczki MSI? Od teraz będą Państwo mogli w dowolnej chwili zainstalować dowolne oprogramowanie niezależnie od typu instalatora!” </em></li>    <li><em> “… I teraz widzimy jak&#160; w przeciągu 4 minut stworzyliśmy paczkę, którą możemy w dowolnym czasie rozdystrybuować na wszystkich stacjach w naszej firmie…. Sam użytkownik stacji roboczej nie musi przechodzić przez proces instalacji.”</em></li> </ul>  <p>&#160;</p>  <p>Wszystko fajnie, niestety jak to mówią: Lucyfer tkwi w szczegółach, które często są pomijane przez osoby reklamujące dany produkt. Nie ma w tym nic dziwnego, przecież sprzedawca zawsze chce zarobić na systemie. Niestety w 80% przypadków przedstawiając wady danego produktu lub czas jaki będzie musiał poświęcić administrator na konfiguracje niestandardowych programów, nasz sprzedawca raczej nie utrzymałby się w branży. </p>  <p>W przypadku chęci wykorzystania SCCM do dystrybucji oprogramowania trzeba pamiętać&#160; o tym, że Configuration Manager nie odpowiada za przygotowanie samego instalatora. Ta czynność nadal pozostaje w gestii administratora. Jeśli chcemy zainstalować dowolne oprogramowanie bez ingerencji użytkownika to musimy przygotować odpowiedni skrypt, plik podpowiedzi, zapoznać się z parametrami instalatora. W przypadku większości aplikacji proces ten może trwać od trzech do pięciu minut. Jeśli chcemy przygotować bardziej zaawansowaną instalację musimy się liczyć z faktem, że wymagany czas może drastycznie wzrosnąć. </p>  <p>Po utworzeniu paczki, trzeba ją jeszcze przetestować, sprawdzić czy instalator się nie zawiesza w dowolnym kroku, czy proces instalacji trwa tyle co zakładaliśmy, itd. </p>

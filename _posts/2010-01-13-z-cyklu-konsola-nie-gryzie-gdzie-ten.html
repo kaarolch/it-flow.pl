@@ -1,0 +1,19 @@
+---
+layout: post
+title: 'Z cyklu konsola nie gryzie: Gdzie ten ogon.'
+date: '2010-01-13T01:34:00.000+01:00'
+author: kaarol
+tags:
+- Windows XP
+- Komercja
+- Vista
+- Windows Server 2kX
+- Oprogramowanie klienckie
+- Windows 7
+modified_time: '2015-03-03T21:19:14.370+01:00'
+thumbnail: http://1.bp.blogspot.com/-jfktRN-iBoQ/VPYVDMXgLPI/AAAAAAAAAEo/muDfSX1boLc/s72-c/tail.png
+blogger_id: tag:blogger.com,1999:blog-1272990746006552071.post-466069623625686596
+blogger_orig_url: http://www.it-flow.pl/2010/01/z-cyklu-konsola-nie-gryzie-gdzie-ten.html
+---
+
+Cztery lata używania systemów innych niż Windows odbijają dość mocne znamię :) Szczególnie gdy ktoś przez spory okres czasu bardziej zaprzyjaźniał się z konsolą niż z X-ami. Mimo iż od około trzech lat cały czas zaprzyjaźniam się z “oknami” to nadal zdarza mi się korzystać z wiersza poleceń. <br />Tak, w systemach Windows jest coś takiego jak wiersz poleceń. Microsoft wypuszczał i wypuszcza masę narzędzi ułatwiających pracę w konsoli. Cześć z tych narzędzi nie jest domyślnie instalowana w systemie dlatego wiele osób nie wie o ich istnieniu. <br />Ostatnimi czasy spotkałem się z kilkoma pytaniami od studentów i znajomych, które dotyczyły&nbsp; odpowiednika unixowej komendy tail. W przypadku systemów Windows Server do 2003 i systemów klienckich do Windows XP sprawa była dość prosta. Wystarczyło pobrać&nbsp; <a href="http://download.microsoft.com/download/8/e/c/8ec3a7d8-05b4-440a-a71e-ca3ee25fe057/rktools.exe">Windows Resource Kit Tools</a>. Po zainstalowaniu i uaktualnieniu ścieżki Path o odpowiednie wpisy można było korzystać z komendy tail. <br /> <br /><div class="separator" style="clear: both; text-align: center;"><a href="http://1.bp.blogspot.com/-jfktRN-iBoQ/VPYVDMXgLPI/AAAAAAAAAEo/muDfSX1boLc/s1600/tail.png" imageanchor="1" style="margin-left: 1em; margin-right: 1em;"><img border="0" src="http://1.bp.blogspot.com/-jfktRN-iBoQ/VPYVDMXgLPI/AAAAAAAAAEo/muDfSX1boLc/s1600/tail.png" /></a></div>Jedynym minusem tej komendy jest brak możliwości definiowania ilości wierszy, które mają zostać wyświetlone.&nbsp; Opcja –f działa bardzo dobrze i poprawnie wyświetla informacje dopisywane do pliku. <br /><strong>A co z Windows Server 2008, Vista i 7?</strong> <br />W tych systemach te same czynności możemy wykonać za pomocą powłoki Powershell. <br />Odpowiednikiem komendy <em>tail –f</em> nazwa_pliku jest <em>Get-Content nazwa_pliku –wait.</em> <br /><div class="separator" style="clear: both; text-align: center;"><a href="http://3.bp.blogspot.com/-tFMWemsvHIw/VPYVDSgLfZI/AAAAAAAAAEk/EiC-iMvxgH4/s1600/tail_ps1.png" imageanchor="1" style="margin-left: 1em; margin-right: 1em;"><img border="0" src="http://3.bp.blogspot.com/-tFMWemsvHIw/VPYVDSgLfZI/AAAAAAAAAEk/EiC-iMvxgH4/s1600/tail_ps1.png" /></a></div><br />Co ciekawe da się też wyświetlać określoną ilość linii: <em>Get-Content nazwa_pliku | select </em> -last 2.<br /><div class="separator" style="clear: both; text-align: center;"><a href="http://4.bp.blogspot.com/--b7s1MWN7Wc/VPYVDqTUe-I/AAAAAAAAAEg/BMyXsWh31fY/s1600/tail_ps2.png" imageanchor="1" style="margin-left: 1em; margin-right: 1em;"><img border="0" src="http://4.bp.blogspot.com/--b7s1MWN7Wc/VPYVDqTUe-I/AAAAAAAAAEg/BMyXsWh31fY/s1600/tail_ps2.png" /></a></div><br />Jak widać osoby które lubią konsole wcale nie mogą narzekać na brak poleceń i możliwości jej wykorzystania. Owszem bazowy asortyment poleceń nie jest duży jednak można go rozszerzyć za pomocą dodatkowych paczek, powłok i programików z rożnych stron.

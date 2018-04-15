@@ -1,0 +1,14 @@
+---
+layout: post
+title: Migracja vCenter 2.5 do vCenter 4.0
+date: '2009-07-23T02:07:00.000+02:00'
+author: kaarol
+tags:
+- Wirtualizacja
+- VMware
+modified_time: '2015-02-23T23:51:45.286+01:00'
+blogger_id: tag:blogger.com,1999:blog-1272990746006552071.post-2497858967271328894
+blogger_orig_url: http://www.it-flow.pl/2009/07/migracja-vcenter-25-do-vcenter-40.html
+---
+
+Uff, dzień zabawy z vCenter. Od pewnego czasu trzeba było zaktualizować vCenter do nowszej wersji:) Dziś się za to zabrałem i muszę przyznać, że trochę zeszło (7h z przerwami):/<br/><br/>Po dzisiejszych zabawach parę uwag:<br/><ol><br/>	<li>Jeśli  vCenter 2.5 było zainstalowane na kontrolerze domeny to nie da się go zaktualizować. Wynika to z faktu, że nowe vCenter wykorzystuje ADAM, który z wiadomych przyczyn nie może zostać zainstalowany na kontrolerze domeny :) Tak więc jeśli migrujesz do wersji 4 postaw sobie maszynkę wirtualną (zgodnie z zaleceniami VMware) i na niej instaluj od zera nowe vCenter server.</li><br/>	<li>Niestety zrobienie remove na węźle ESX, który jest w starym klastrze  wymaga zatrzymania wszystkich maszyn wirtualnych i przejścia w tryb maintenance mode. Jeśli w tym klastrze na maszynie wirtualnej mamy nową instalacje vCenter  to wyłączenie jej raczej jest strzałem w kolano. Dlatego najlepiej na węzłach zrobić disconnect i potem usunąć je poprzez opcje remove z starego vCenter. Operacja ta spowoduje odłączenie serwerów ESX jednak nie zatrzyma maszyn, które są na nich umieszczone. Następnie na nowym vCenter dodajemy wypięte węzły. Maszyny na tych węzłach będą cały czas uruchomione. Jedynie podczas dodawania węzła do nowego vCenter może on (ale nie musi) rzucić ostrzeżenie, że  jest już związany z innym serwerem vCenter.</li><br/>	<li>Po przepięciu węzłów nie usuwamy starego serwera licencji. Dopóki ESX nie zostaną uaktualnione do wersji 4.0  nie będą mogły skorzystać z nowego sposobu pobierania licencji z serwera vCenter 4. Stary serwer licencji usuwamy dopiero jak zaktualizujemy wszystkie ESX i zobaczymy na starym serwerze licencji, że żadna licencja nie jest wykorzystywana.</li><br/>	<li>Aktualizacje ESX do wersji 4.0 przeprowadza się za pomocą update managera, który jest dostępny w nowym vCenter. Podajemy mu kulturalnie obraz iso ESX 4.0 i konfigurujemy trzy opcje dotyczące uaktualnień. Następnie przypinamy polisę uaktualnienia do każdego węzła. Jeśli za pierwszym razem uaktualnienie zakończy się fiaskiem trzeba zmodyfikować polisę (zgodzić się na licencje i kliknąć trzy razy next:)</li><br/>	<li>Client vCenter nie działa poprawnie na windows 7 RC:( Trzeba wykorzystać windows mode.</li><br/></ol><br/>To chyba tyle wskazówek, które mogą się przydać. Przepraszam za jakość wypowiedzi jednak aktualnie próbuję nie zasnąć na backspace.<br/><br/>Jeśli coś jeszcze wpadnie mi do głowy odnośnie migracji Vi do vSphere to postaram się dopisać.

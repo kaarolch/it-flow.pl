@@ -1,0 +1,16 @@
+---
+layout: post
+title: "[EN] Simple LDAP dump script"
+date: '2016-01-16T14:11:00.002+01:00'
+author: kaarol
+tags:
+- Backup
+- OpenLdap
+- Open Source
+- Bash script
+modified_time: '2016-08-08T19:52:14.401+02:00'
+blogger_id: tag:blogger.com,1999:blog-1272990746006552071.post-4998051783773926953
+blogger_orig_url: http://www.it-flow.pl/2016/01/simple-ldap-dump-example.html
+---
+
+<table cellpadding="0" cellspacing="0" class="tr-caption-container" style="float: left; margin-right: 1em; text-align: left;"><tbody><tr><td style="text-align: center;"><a href="https://upload.wikimedia.org/wikipedia/en/c/c7/OpenLDAP-logo.png" imageanchor="1" style="clear: left; margin-bottom: 1em; margin-left: auto; margin-right: auto;"><img border="0" height="78" src="https://upload.wikimedia.org/wikipedia/en/c/c7/OpenLDAP-logo.png" width="200" /></a></td></tr><tr><td class="tr-caption" style="text-align: center;">source: wikimedia.org</td></tr></tbody></table>A few days ago my friend ask me if I can send him some simple ldap dump script. I have one old script that I made a year ago that I use to backup my home media center LDAP instance. Bash + a few standard Linux and OpenLdap tools.<br /><a name='more'></a><br /><br /><br /><br /><script src="https://gist.github.com/kaarolch/25ef6536d774ca562f25.js"></script> Comments:<br /><br /><ul><li>Main idea: create simple script that will store recent backups for a few days.&nbsp;</li><li>All old backups should be remove after $RETENTION time ( in days).</li><li>Slapcat could be done in online mode but you can have a problem with dump consistency.</li><li>Probably in your lab you don't need to kill all the processes that have something in common with slapd (kill section lines from 15-21).</li></ul>

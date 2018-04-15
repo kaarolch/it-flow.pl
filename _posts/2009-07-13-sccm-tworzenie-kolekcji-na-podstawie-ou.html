@@ -1,0 +1,13 @@
+---
+layout: post
+title: SCCM – tworzenie kolekcji na podstawie OU.
+date: '2009-07-13T21:14:00.000+02:00'
+author: kaarol
+tags:
+- SCCM
+modified_time: '2015-02-23T23:51:45.266+01:00'
+blogger_id: tag:blogger.com,1999:blog-1272990746006552071.post-5849000019022712329
+blogger_orig_url: http://www.it-flow.pl/2009/07/sccm-tworzenie-kolekcji-na-podstawie-ou.html
+---
+
+Jeśli ktoś potrzebuje stworzyć kolekcje w oparciu o konkretną jednostkę organizacyjną należy pamiętać o kilku rzeczach.<br/><br/>Podczas włączania Metod wykrywania komputerów w AD poza włączeniem “Active Directory System Discovery” należy też włączyć “Active Directory System Group Discovery”. Dopiero po włączeniu obu tych opcji będzie można przydzielać komputery do określonej kolekcji na podstawie OU w którym się znajduje.<br/><br/>Wynika to z faktu, że:<br/><ol><br/>	<li>Active Directory System Discovery – zbiera nam takie informacje jak:</li><br/></ol><br/><ul><br/>	<li>Computer name</li><br/>	<li>Active Directory container name</li><br/>	<li>Active Directory site name</li><br/>	<li>IP address</li><br/>	<li>MAC address</li><br/>	<li>SMS assigned site</li><br/>	<li>SMS Unique Identifier (GUID</li><br/></ul><br/><ol><br/>	<li>Active Directory System Group Discovery – dodaje takie informacje jak:</li><br/></ol><br/><ul><br/>	<li>Organizational unit</li><br/>	<li>Global groups</li><br/>	<li>Universal groups</li><br/>	<li>Nested groups</li><br/>	<li>Nonsecurity groups</li><br/></ul><br/>Następnie podczas tworzenia zasad przynależności do danej kolekcji trzeba ustawić by wartość <em>System Resource –&gt; System OU Name</em> była równa pełnej ścieżce OU. Np: TESTY.LOCAL/FINANSE/BUDYNEK1.

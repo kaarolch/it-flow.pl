@@ -1,0 +1,14 @@
+---
+layout: post
+title: Active Directory Intra-Site Replication :Access Denied.
+date: '2010-01-17T12:04:00.000+01:00'
+author: kaarol
+tags:
+- Active Directory
+- Windows Server 2kX
+modified_time: '2015-02-23T23:51:45.671+01:00'
+blogger_id: tag:blogger.com,1999:blog-1272990746006552071.post-6629440002605319287
+blogger_orig_url: http://www.it-flow.pl/2010/01/active-directory-intra-site-replication.html
+---
+
+Nie lubię diagnozować problemów z replikacją. Zazwyczaj problemy te są proste do zidentyfikowania i poprawienia, jednak czasem człowiek wyrywa sobie włosy z głowy.<br/><br/>W jednej z domen, którą zarządzam mam mieszane środowisko Wind2k3 i Win 2k. Zazwyczaj wszystko pięknie chodzi, co często usypia moją czujność i pozwala mi zapomnieć o niektórych maszynach na długi czas ( czasem w końcu trzeba wgrać poprawki). Po ostatnich przenosinach, podmiankach, wymianach, readresacjach…, które odbyły się o dziwo bez problemu od pewnego czasu w logach pojawiały się Eventy 1311, 1566. Osoby zajmujące się Active Directory stwierdź – haha standardowe problemy <a href="http://support.microsoft.com/default.aspx?scid=kb;en-us;249256">How to troubleshoot intra-site replication failures.</a> No i wszystko fajnie przeszedłem całą standardową procedurę omijając kroki, które mnie nie dotyczą, czyli ogólnie: repadmin …, net stop lsass …, netdom resetpwd …, net start lsass. Po restarcie wszystko działa jak poprzednio , replikacja nadal <em>Access Denied</em>. Wireshark mówi, że kontrolery się komunikują jednak DC wyraźnie stwierdza ze KCC nie może zbudować topologii replikacji.  Repadmin stwierdza, że wszystko spięte, połączenia istnieją, itd.  Jak się okazało rozwiązaniem problemu była aplikacja łatki <a href="http://support.microsoft.com/kb/819249/en-us">Q819249</a>.<br/><br/><em>In Windows 2000, the Knowledge Consistency Checker (KCC) uses the Intersite Messaging service to help it build the spanning tree topology for Microsoft Active Directory directory service replication. In a very small percentage of cases, Intersite Messaging may not complete building the hash table that it passes to the KCC. When the KCC uses this hash table in its calculations, this may generate the KCC logging event ID 1311 in the Directory Services event log.<br/>This problem typically occurs in environments with large numbers of sites, domain controllers, and domains.</em><br/><br/>W sumie niewiele brakło a zadałbym pytanie na WSS. Jednak stwierdziłem, że skoro od pewnego czasu interesuję się AD to trzeba sobie z problemami radzić samemu &lt;taniec szczęścia&gt;.

@@ -1,0 +1,13 @@
+---
+layout: post
+title: Internet Explorer 8.0 Bardzo długi start.
+date: '2009-03-16T01:43:00.000+01:00'
+author: kaarol
+tags:
+- Przeglądarki
+modified_time: '2015-02-23T23:51:44.954+01:00'
+blogger_id: tag:blogger.com,1999:blog-1272990746006552071.post-2066335053750466167
+blogger_orig_url: http://www.it-flow.pl/2009/03/internet-explorer-80-bardzo-dugi-start.html
+---
+
+<p>Po instalacji Windows 7.0 przez kilka miesięcy miałem problem z wolno uruchamiającym się Internet Explorerem 8.0. Po włączeniu przeglądarki musiałem czekać 30-50 sekund aż się ona raczy uruchomić. Mimo poszukiwań w Google nie znalazłem jakiegoś sensownego opisu dlaczego IE wstaje tak wolno. Dziś metodą prób i błędów znalazłem problem. Okazało się, że moja instalacja IE miała problem z wybraniem odpowiedniego połączenia sieciowego przy starcie:/ Może jest to spowodowane duża ilością połączeń VPN i wirtualnych interfejsów (VMware).</p>  <p>Rozwiązaniem tego problemu okazało się&#160; wyłączenie w “Opcje internetowe” –&gt;&gt; “Połączenia” –&gt;&gt; “Ustawienia sieci Lan”&#160; automatycznego wykrywania ustawień. </p>  <p><a href="http://it-flow.pl/wp-content/uploads/2009/03/image.png"><img style="border-bottom: 0px; border-left: 0px; display: block; float: none; margin-left: auto; border-top: 0px; margin-right: auto; border-right: 0px" title="image" border="0" alt="image" src="http://it-flow.pl/wp-content/uploads/2009/03/image-thumb.png" width="244" height="195" /></a>Po zatwierdzeniu zmian i ponownym uruchomieniu IE startuje w mgnieniu oka.&#160; Jutro postaram się poszukać gdzie dokładniej tkwił problem. </p>

@@ -1,0 +1,13 @@
+---
+layout: post
+title: Windows Update, Msiexec crash ?
+date: '2009-01-19T21:27:00.000+01:00'
+author: kaarol
+tags:
+- Windows 7
+modified_time: '2015-02-23T23:51:44.801+01:00'
+blogger_id: tag:blogger.com,1999:blog-1272990746006552071.post-3620308481895324917
+blogger_orig_url: http://www.it-flow.pl/2009/01/windows-update-msiexec-crash.html
+---
+
+<p>W poprzednim wpisie pokazywałem jak na chwilę obecną ominąć problem z stale wysypującym się WU, msiexec. Nie napisałem natomiast nic dlaczego tak się dzieje. Z względu na to, że lubię wiedzieć co wyłączyłem lub co zepsułem, zacząłem drążyć temat.</p>  <p>Jak się okazało problem jest dość poważny. Błędy z WU i MSIE… spowodowane są klientem SQM, który jest częścią “Customer Experience Improvement Program”. Czyli krótko mówiąc jest to mechanizm, który pozwala wysłać z stacji pewne informacje o systemie i ewentualnie o problemach do MS.</p>  <p>Jak to działa??</p>  <p>Każdy proces który wywołuje funkcje WinSqmStartSession w ntdll.dll “ wysypie się “ wtedy gdy wpis <em>MachineThrottling</em> jest&#160; ustawiony w rejestrze. Wpis ten jest widoczny w rejestrze, ponieważ naturalnym jest, że Microsoft chce otrzymywać dane o działaniu bety w7. Jeśli zmodyfikujemy rejestr to niestety Microsoft nie będzie otrzymywał informacji o naszym systemie. </p>  <p>Jak szybko to zostanie poprawione??</p>  <p>Wydaje mi się, że Microsoft będzie chciał naprawić ten błąd jak najszybciej. </p>  <p>Więcej informacji na blogu <a href="http://chris123nt.com/2009/01/18/sqm-client-causing-crashing-in-windows-7/">Chris Holmes</a>’a.</p>

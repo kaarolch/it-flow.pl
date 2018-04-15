@@ -1,0 +1,13 @@
+---
+layout: post
+title: DHCP – Wykluczyć cały zakres?
+date: '2010-04-09T01:45:00.000+02:00'
+author: kaarol
+tags:
+- Windows Server 2kX
+modified_time: '2015-02-23T23:51:45.722+01:00'
+blogger_id: tag:blogger.com,1999:blog-1272990746006552071.post-5027949247824049046
+blogger_orig_url: http://www.it-flow.pl/2010/04/dhcp-wykluczyc-cay-zakres.html
+---
+
+<p>Sytuacja dość prosta i czasem spotykana w różnych organizacjach. </p>  <ul>   <li>Mamy sobie sieć:10.10.0.0/16. </li>    <li>Tworzymy na serwerze DHCP zakres dystrybucji adresów (Scope) 10.10.1.0-10.10.3.254. </li>    <li>Na ten zakres narzucamy wykluczenie 10.10.1.0-10.10.3.254. </li>    <li>Do bazy DHCP dodajemy kolejne rezerwacje dla odpowiednich hostów. </li>    <li>I mamy usługę, która rozdaje adresy tylko dla osób z odpowiednim adresem MAC. </li> </ul>  <p>&#160;</p>  <p>Aby rozwiać wątpliwości niektórych osób, rezerwacje są ważniejsze od wykluczeń. Informacje o tym fakcie można znaleźć w <a href="http://support.microsoft.com/kb/196066">KB196066</a>. Tak, wiem parę osób zaraz zarzuci mi informacją, że przecież w Windows Server 2008 R2 nie można dodawać rezerwacji spoza zakresu <a href="http://support.microsoft.com/kb/2005980">KB2005980</a>. Na szczęście dodawanie rezerwacji z poza zakresu nie oznacza dodawania rezerwacji z przestrzeni, która została wycięta poprzez wykluczenie. </p>  <p>W skrócie, od Windows Server 2008 R2 nie można dodać rezerwacji adresu 10.10.0.10 do bazy serwera DHCP, jednak dodanie rezerwacji dla 10.10.2.100 jest możliwe. </p>

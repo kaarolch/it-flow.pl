@@ -1,0 +1,14 @@
+---
+layout: post
+title: Vmware Workstation 7 i Windows 7
+date: '2009-11-11T18:25:00.000+01:00'
+author: kaarol
+tags:
+- VMware
+- Windows 7
+modified_time: '2015-02-23T23:51:45.555+01:00'
+blogger_id: tag:blogger.com,1999:blog-1272990746006552071.post-7758303901686145066
+blogger_orig_url: http://www.it-flow.pl/2009/11/vmware-workstation-7-i-windows-7.html
+---
+
+<p>Kilka dni temu skusiłem się na zakup uaktualnienia VMware workstation z 6.5 do 7. Na stronie vmware jest opis nowych dodatków, które zostały zaimplementowane w Workstation 7. Mnie najbardziej interesowało wsparcie dla Windows 7 jako systemu hosta i gościa. </p>  <p>Sama aktualizacja przeszła dość szybko. Niestety co pewien czas przytrafiały mi się różne problemy z siecią, które często ignorowałem. Pewnego dnia okazało się, że połączenie się do nowej sieci czy zestawienie VPN na systemie hosta potrafiło całkowicie zawiesić system.&#160; Po kilku godzinach wpadłem na pomysł by powyłączać mechanizmy mostka, które dorzuca VMware do połączeń sieciowych. Jak się okazało wyłączenie tej funkcji spowodowało usunięcie problemu z zawieszającym sie systemem jednak uniemożliwiło wykorzystanie mostkowanego połączenia w maszynach wirtualnych.&#160; Niestety mam kilka maszyn, które po prostu muszą być podpięte bezpośrednio do tej samej siec co host. </p>  <p>W niedzielny wieczór (hmm w sumie to już była 4 nad ranem) okazało się, że po instalacji VMware i restarcie systemu należy się zalogować na konto administratora i poczekać, aż workstation7 doinstaluje niezbędne komponenty.&#160; Jeśli pominiemy ten krok to może się okazać, że co pewien czas mogą się pojawiać dziwne problemy z maszynami wirtualnymi. </p>  <p>PS</p>  <p>Aktualnie przymieszam się napisać coś więcej o tym problemie na community VMware by utwierdzić się w przekonaniu, że faktycznie problem wygenerowałem sobie sam wykorzystując do instalacji zwykłe konto i UAC:(</p>

@@ -1,0 +1,15 @@
+---
+layout: post
+title: Wireshark – łapanie ruchu sieciowego z maszyn wirtualnych.
+date: '2010-07-14T10:23:00.000+02:00'
+author: kaarol
+tags:
+- Windows Server 2kX
+- Wirtualizacja
+- Windows 7
+modified_time: '2015-02-23T23:51:46.017+01:00'
+blogger_id: tag:blogger.com,1999:blog-1272990746006552071.post-6250215352719143574
+blogger_orig_url: http://www.it-flow.pl/2010/07/wireshark-apanie-ruchu-sieciowego-z.html
+---
+
+<p>Podczas ostatnich potyczek z Windows 7 i Cross realm zauważyłem ciekawą rzecz. W przypadku wykorzystania interfejsu hosta poprzez maszyny wirtualne (Bridged connection) z stacji hosta na którym jest zainstalowany VMware można uruchomić Wiresharka i śledzić ruch przesyłany z maszyn wirtualnych w świta. Jedynie w celu wyczyszczenia zbędnego ruchu warto użyć filtru ip.addr=Adres_IP. Jest to o tyle przydatne, że nie trzeba się bawić w zdalne łapanie ruchu. Niby oczywista rzecz a przez kilka dni męczyłem się w zdalne łapanie ruchu czy przełączanie między kontami na jednej stacji. </p>

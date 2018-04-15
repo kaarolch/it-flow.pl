@@ -1,0 +1,14 @@
+---
+layout: post
+title: Dystrybucja kilku wersji pakietów Office na jeden sprzęt.
+date: '2009-09-01T19:03:00.000+02:00'
+author: kaarol
+tags:
+- Komercja
+- Oprogramowanie klienckie
+modified_time: '2015-02-23T23:51:45.370+01:00'
+blogger_id: tag:blogger.com,1999:blog-1272990746006552071.post-4507647210766247224
+blogger_orig_url: http://www.it-flow.pl/2009/09/dystrybucja-kilku-wersji-pakietow.html
+---
+
+<p>Jak to zwykle bywa w wakacje nadchodzi taki czas kiedy trzeba uaktualnić oprogramowanie. W wielu przypadkach operacja jest dość prosta:</p>  <ul>   <li>ponowna instalacja </li>    <li>uaktualnienie</li> </ul>  <p>Czasem jednak poza uaktualnieniem oprogramowania wymagane jest utrzymanie starszej wersji aplikacji. W przypadku Office jest to jak najbardziej możliwe. Według MS wystarczy postępować zgodnie z <a href="http://support.microsoft.com/kb/928091/">KB928091</a>. Dziś przekonałem się, że w tym dokumencie brakuje opisu sytuacji, w której:</p>  <ul>   <li>chcemy zachować Office 2003 </li>    <li>chcemy zainstalować Office 2007 Std</li>    <li>chcemy doinstalować Access 2007 </li> </ul>  <p>Jeśli robimy to ręcznie to nie mam problemu; podczas instalacji Office 2007 i Access 2007 mamy pytanie czy nadpisać starsza wersje, doinstalować nowsza, nadpisać tylko wybrane. Jednak jeśli wykorzystujemy do dystrybucji SCCM lub GPO to musimy pamiętać by:</p>  <ul>   <li>Podczas tworzenia pliku MSP zaznaczyć co chcemy nadpisać a czego nie, </li>    <li>podczas instalacji zachować odpowiednia kolejność (Office 2k3, 2k7, Access 2k7). </li> </ul>  <p>Jeśli wrzucimy instalacje (np. Task sequence w SCCM ) w kolejności Office 2k3, Access 2k7, Office 2k7 to:</p>  <ul>   <li>instalator Access 2007 pozostawi nam na dysku Access 2003 i pozostałe komponenty Office 2003</li>    <li>instalator Office 2007 usunie nam z dysku World, PowerPointa, Excela 2k3 a Access 2003 pozostawi bez zmian. </li> </ul>  <p>&#160;</p>  <p>Według MS dzieje się tak, ponieważ instalator pakietu Office&#160; sprawdza co ma pozostawić tylko w przypadku pierwszej instalacji.&#160; Co ciekawe podczas instalacji w odwrotnej kolejności instalator mimo wszystko sprawdza co usunąć a co zostawić. </p>

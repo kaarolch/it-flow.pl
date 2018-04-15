@@ -1,0 +1,13 @@
+---
+layout: post
+title: EndPoint Protection 11.
+date: '2008-07-10T19:34:00.000+02:00'
+author: kaarol
+tags:
+- Symantec
+modified_time: '2015-02-23T23:51:44.100+01:00'
+blogger_id: tag:blogger.com,1999:blog-1272990746006552071.post-9024556930139169231
+blogger_orig_url: http://www.it-flow.pl/2008/07/endpoint-protection-11.html
+---
+
+Nie ma co panowie z Symantec'u umieją dobierać środki by dojść do celu. Właśnie debugowałem błędy konsoli zarządzania EntPoint'a, po dwóch godzinach walki, kilku kawach udało się zmusić aplikacje do współpracy. :((((( Okazało się, że aby symantec chodził poprawnie trzeba dość mocno zmodyfikować polise serwera:( Zmienić parę rzeczy, bez których program powinnien sobie poradzić. Chodziło głównie o brak uprawnień do wykoanania skryptów CGI, oraz przydziału odpowiedznich opcji w GPO serwera.<br/><br/><strong>Problem:</strong><br/><ul><br/>	<li> EPP 11 po zainstalowaniu i konfiguracji nie miał uprawnień na wykonanie skryptu CGI (generowanie raportu,statystyk, monitoringu stacji)</li><br/></ul><br/><strong>Rozwiązanie:</strong><br/><ul><br/>	<li>Sprawdzenie poprawności uprawnień dla puli aplikacji obsługujacej serwer.</li><br/>	<li>Zezwolenieodpowiedzniemu użytkownikowi dostosowywać quote procesu</li><br/>	<li>Update polisy na serwerze</li><br/></ul><br/><strong>Podsumowanie:</strong><br/><br/>Symantec tworzy EPP 11 tylko na systemy windows, serwer EPP 11 jest na windowsie, instalacja wymaga IIS:) Ale, ale Symantec podrzuca nam dodatkowo Tomcata, który ma w sobie po FastCgi uruchomione PHP. I teraz się zastanawiam po co robić krowe?? Poto żeby pokazać, że skoro to jest ciężkie oprogramowanie to musi być skuteczne?? Kto w tym momencie myśli o adminie, który przez ten soft dodatkowo rozbezpiecza serwer??? Czy nie można było poświecić 5-6 miesięcy więcej i zrobić ładną stronę w ASP, która integruje się w pełni z systemem. Wszystko jest wpisywane w normalny log a nie:<br/><ul><br/>	<li> 50% wpisane w log Tomcat'a</li><br/>	<li>30% w logi PHP</li><br/>	<li>20% wpisane w logi IIS.</li><br/></ul><br/>Polecam się zapoznać z KB dla tego błędu ( nie pamiętam numerku ale jest gdzieś na stronie supportu Symanteca), szukajcie po empty report page.

@@ -1,0 +1,13 @@
+---
+layout: post
+title: Windows 7 – WU i błąd Explorera
+date: '2009-01-19T20:09:00.000+01:00'
+author: kaarol
+tags:
+- Windows 7
+modified_time: '2015-02-23T23:51:44.791+01:00'
+blogger_id: tag:blogger.com,1999:blog-1272990746006552071.post-6680593242747302843
+blogger_orig_url: http://www.it-flow.pl/2009/01/windows-7-wu-i-bad-explorera.html
+---
+
+<p>Tak to jest jak człowiek używa w7 beta jako bazowego systemu:) Ogólnie beta jest dość stabilna ale czasem zdarzają się wpadki.&#160; Ostatnio po uruchomieniu Windows Update dostawałem błąd Explorera, który powodował jego późniejszy reset. </p>  <p>Rozwiązanie tego problemu jest dość proste:</p>  <ol>   <li>Odpalamy Regedit </li>    <li>Przechodzimy do <em>HKLM\Software\Microsoft\SQMClient\Windows\DisabledSessions</em></li>    <li>Zmieniamy nazwę klucza <em>MachineThrottling</em> na <em>_MachineThrottling</em></li>    <li>Wyłączamy regedit </li>    <li>Uruchamiamy WU</li> </ol>

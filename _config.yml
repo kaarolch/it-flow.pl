@@ -83,7 +83,11 @@ og_image                 : # Open Graph/Twitter default site image
 social:
   type                   : Person
   name                   : "Karol Chrapek"
-  links: https://twitter.com/kaarolch
+  links:
+    - "https://twitter.com/kaarolch"
+    - "https://www.linkedin.com/in/kaarol/"
+    - "https://github.com/kaarolch"
+    - "https://keybase.io/kaarol"
 
 # Analytics
 analytics:

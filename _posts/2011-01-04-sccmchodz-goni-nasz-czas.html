@@ -6,9 +6,7 @@ author: kaarol
 tags:
 - SCCM
 modified_time: '2015-03-03T00:21:35.977+01:00'
-thumbnail: http://3.bp.blogspot.com/-I5ywL2DiA44/VPTwarE9b1I/AAAAAAAAAAc/gweIdXWKa1M/s72-c/UTC-SCCM.png
 blogger_id: tag:blogger.com,1999:blog-1272990746006552071.post-291762019193321259
-blogger_orig_url: http://www.it-flow.pl/2011/01/sccmchodz-goni-nasz-czas.html
 ---
 
 <div align="justify">Ostatnio kilkakrotnie spotkałem się z pytaniem: <em>Dlaczego mimo upływu ustawionego ostatecznego terminu instalacji aktualizacji (deadline) klient SCCM uruchamia aktualizację dopiero po 2h. </em> Nie jest to żaden błąd w kliencie. Dwu godzinne opóźnienie inst. łatek w 99% przypadków wynika z wymuszenia wykorzystywania czasu UTC.&nbsp; Jeśli nic nie zmienialiśmy w konfiguracji to domyślnie serwer SCCM informuje klienta by skorzysta z czasu UTC podczas weryfikacji czasu wymuszenia. W przypadku naszego kraju czas UTC jest przesunięty o tajemnicze dwie godziny ;]</div><div align="justify">Oczywiście można to zmienić:</div><ol><li>     <div align="justify">Rozwijamy <em>Deployment Management</em> <strong>(1)</strong></div></li><li>     <div align="justify">Wybieramy właściwości ogłoszenie, które nas interesuje <strong>(2)</strong></div></li><li>     <div align="justify">Przechodzimy do zakładki&nbsp; <em>Display/Time Settings </em><strong>(3)</strong></div></li><li>     <div align="justify">Wybieramy czas lokalny (<em>Current Time</em>) <strong>(4)</strong><br /><div class="separator" style="clear: both; text-align: center;"><strong><a href="http://3.bp.blogspot.com/-I5ywL2DiA44/VPTwarE9b1I/AAAAAAAAAAc/gweIdXWKa1M/s1600/UTC-SCCM.png" imageanchor="1" style="clear: left; float: left; margin-bottom: 1em; margin-right: 1em;"><img border="0" src="http://3.bp.blogspot.com/-I5ywL2DiA44/VPTwarE9b1I/AAAAAAAAAAc/gweIdXWKa1M/s1600/UTC-SCCM.png" height="592" width="640" /></a></strong></div></div></li></ol><div align="center"></div>

@@ -7,7 +7,6 @@ tags:
 - Jezyki programowania
 modified_time: '2015-02-23T23:51:44.770+01:00'
 blogger_id: tag:blogger.com,1999:blog-1272990746006552071.post-6682323629644700675
-blogger_orig_url: http://www.it-flow.pl/2009/01/wyszukiwanie-plikow-o-okreslonym.html
 ---
 
 Jak w szybki sposób wyszukać pliki o określonym rozszerzeniu na wszystkich dostępnych dyskach:<br/><br/>Do notatnika wklejamy poniższy kod i zapisujemy go jako plik batch (wyszukaj.bat).<br/><pre lang="Winbatch">@echo off<br/>  for /f "skip=9 tokens=3" %%i in ('echo list volume ^| diskpart') do ( <br/><br/>  dir %%i:\*.* /S /B /X |find ".%1" <br/><br/>  )</pre><br/>Po zapisaniu pliku odpalamy go z wiersza poleceń z podaniem rozszerzenia:<br/><br/><em>wyszukaj.bat txt</em><br/><br/>Chyba czas zabrać się na poważnie za powershell:)

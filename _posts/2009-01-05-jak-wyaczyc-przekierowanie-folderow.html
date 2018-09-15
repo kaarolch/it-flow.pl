@@ -7,9 +7,7 @@ tags:
 - Windows Server 2kX
 - Systemy operacyjne
 modified_time: '2015-03-03T21:28:25.525+01:00'
-thumbnail: http://1.bp.blogspot.com/-hg8VsqrCOy8/VPYVBp6UfFI/AAAAAAAAAFM/OTQd9H5z6IY/s72-c/przekierowanie.png
 blogger_id: tag:blogger.com,1999:blog-1272990746006552071.post-659727375824249463
-blogger_orig_url: http://www.it-flow.pl/2009/01/jak-wyaczyc-przekierowanie-folderow.html
 ---
 
 Czasami ludzie tworzą sobie przekierowania folderów. Po pewnym czasie stwierdzają, że jednak chcieli by je wyłączyć. Większość osób (też mi się to zdarza) zapomina o tym, że czasem wyłączenie samego obiektu polityki grupowej nie wystarcza. <br />Wiem, wiem nie każdy czyta wszystkie komentarze, który Microsoft wstawia do konsolki GPMC :) Jednak w przypadku przekierowań pamiętajcie o tym, że domyślnie <em>"Any existing redirection will continue to apply even when this group policy object is removed".</em> Czyli standardowo podczas wyłączenia naszej polisy, system nadal będzie używał ustawionego przekierowania:)<br />Aby przekierowanie nie było używane po wyłączeniu naszej Polityki grup należy w konfiguracji przekierowania w zakładce Settings zmienić opcję Policy Removal z <em>“Leave the folder in the new location when policy is removed”</em> na <em>“Redirect the folder back to the local userprofile location when policy is removed”.</em><br /><div align="center"> </div><div class="separator" style="clear: both; text-align: center;"><a href="http://1.bp.blogspot.com/-hg8VsqrCOy8/VPYVBp6UfFI/AAAAAAAAAFM/OTQd9H5z6IY/s1600/przekierowanie.png" imageanchor="1" style="margin-left: 1em; margin-right: 1em;"><img border="0" src="http://1.bp.blogspot.com/-hg8VsqrCOy8/VPYVBp6UfFI/AAAAAAAAAFM/OTQd9H5z6IY/s1600/przekierowanie.png" height="320" width="289" /></a></div><br />Miłej nocy.

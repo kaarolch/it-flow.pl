@@ -7,9 +7,7 @@ tags:
 - Środowiska Wirtualne
 - Oprogramowanie klienckie
 modified_time: '2015-03-03T21:28:57.654+01:00'
-thumbnail: http://2.bp.blogspot.com/-vldat_ngt1M/VPYVESNZGQI/AAAAAAAAAEQ/lfX4Df5quj4/s72-c/vmwareerror.png
 blogger_id: tag:blogger.com,1999:blog-1272990746006552071.post-2460000180415152667
-blogger_orig_url: http://www.it-flow.pl/2009/01/problem-z-uruchomieniem-maszyn-w-vmware.html
 ---
 
 Podczas ostatniego uruchomienia Vmware Workstation 6.5 napotkałem drobny problem. Przez przypadek dzień wcześniej wymusiłem <em>brutalne </em>zamknięcie maszyn wykorzystywanych do pracy inżynierskiej. Dziś przy próbie dołączenia teamu maszyn dostałem taki oto komunikat:<br /><div align="center"> </div><div class="separator" style="clear: both; text-align: center;"><a href="http://2.bp.blogspot.com/-vldat_ngt1M/VPYVESNZGQI/AAAAAAAAAEQ/lfX4Df5quj4/s1600/vmwareerror.png" imageanchor="1" style="margin-left: 1em; margin-right: 1em;"><img border="0" src="http://2.bp.blogspot.com/-vldat_ngt1M/VPYVESNZGQI/AAAAAAAAAEQ/lfX4Df5quj4/s1600/vmwareerror.png" height="101" width="400" /></a></div>Po kilku minutach wyszperałem w necie, że czasem przy dziwnym zamknięciu samego Workstation w katalogach z maszynami mogą zostać pliki o rozszerzeniu <em>lck.</em> Pliki są tworzone podczas uruchomienia maszyny i są one zlokalizowane w katalogu <em>dysk:\Lokalizacja_maszyny\Nazwa_pliku_maszyny.lck\nazwa.lck. </em>Pliki te przechowują pewne dane o uruchomionej maszynie. <br />Po otwarciu w notepad++ zobaczymy coś takiego: <br /><em>uuid=24-bc-4e-72-98-81-bd-11-f6-91-6d-99-0c-4b-a1-29 5936 1 X 123321222274557029 lc=200091</em> <br />Aby ponownie móc użyć danej maszyny lub grupy maszyn, musimy ręcznie usunąć katalogi <em>nazwa_maszyny.lck</em> lub wszystkie pliki o rozszerzeniu <em>lck,</em> które są w tych katalogach<em>.</em><br />Po dokonaniu tej czynności powinniśmy móc uruchomić nasze maszyny.

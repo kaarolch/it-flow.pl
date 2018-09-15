@@ -7,7 +7,6 @@ tags:
 - Przeglądarki
 modified_time: '2015-02-23T23:51:44.898+01:00'
 blogger_id: tag:blogger.com,1999:blog-1272990746006552071.post-5101297228867078278
-blogger_orig_url: http://www.it-flow.pl/2009/03/windows-xp-sp3-i-ie-70.html
 ---
 
 Instalacja IE 7.0 na Windows XP z SP3 może się zakończyć niepowodzeniem. Wynika to z zmian uprawnień na pewnym kluczu rejestru.<br/><pre lang="Winbatch">HKEY_CLASSES_ROOT\Interface\{34A715A0-6587-11D0-924A-0020AFC7AC4D}</pre><br/>Przed SP3 na tym kluczu administrator miał pełne prawa. Po instalacji SP3 administrator ma tylko prawo do odczytu. Aby pomyślnie przeprowadzić instalację IE 7.0 należy z powrotem nadać administratorowi pełny dostęp do tego klucza.<br/><br/>Aktualnie łatwo tą procedurę znaleźć w google. Jednak kilka tygodni temu sporo się nagłowiłem, żeby znaleźć logi instalatora IE 7.0 i potem wyszukać dlaczego instalacja się nie powiodła.

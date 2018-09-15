@@ -7,7 +7,6 @@ tags:
 - VMware
 modified_time: '2015-02-23T23:51:46.275+01:00'
 blogger_id: tag:blogger.com,1999:blog-1272990746006552071.post-917632810396107002
-blogger_orig_url: http://www.it-flow.pl/2012/02/vmware-host-busyscsi-parity-error.html
 ---
 
 <p align="justify">Jest nowa infrastruktura SAN, w której Blade HP mają nowe karty HBA QMH2652. Wszystko fajnie, wreszcie dostęp do macierzy po 2x8GB. Niby miało być szybciej, niby wydajniej a w statystykach opóźnienie większe niż na macierzach iSCSI. Wymian gibików, kabli, switchy czy uaktualnienie firmware dalej nie pomaga.&#160; </p>  <p align="justify">Jeśli jakimś cudem na sporej ilości serwerów, które korzystają z LUNów rozrzuconych po różnych macierzach, otrzymujecie w logu vmkernel powiadomienia <em>H:0x02 D:0x0 P:0x0 lub H:0x0 D:0x47 P:0x0 </em>to czasem jedynym rozwiązaniem może być ograniczenie przepustowości na danym porcie z 8Gb na 4Gb. A i tutaj warto pamiętać, że na kartach dwuportowych obniżenie prędkości może być konieczne tylko na jednym z portów. Swoja drogą na razie nie dotarłem do prawidłowego rozwiązania tego problemu, tak więc cdn…</p>

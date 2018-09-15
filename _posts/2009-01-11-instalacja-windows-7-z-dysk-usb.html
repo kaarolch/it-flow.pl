@@ -7,7 +7,6 @@ tags:
 - Ogólne
 modified_time: '2015-02-23T23:51:44.708+01:00'
 blogger_id: tag:blogger.com,1999:blog-1272990746006552071.post-1694275501900439667
-blogger_orig_url: http://www.it-flow.pl/2009/01/instalacja-windows-7-z-dysk-usb.html
 ---
 
 Wczoraj, właściwie dziś pobrałem iso z nowym systemem. Jak to zwykle bywa chciałem na noc włączyć instalacje, jednak zapomniałem kupić pustą płytę DVD. O godzinie drugiej nad ranem postało mi tylko pomęczyć się z instalacją z dysku USB.<br/><br/>Instalacja przeprowadzana z 4GB pendrive scandisk cruzer.<br/><br/>Przygotowanie pendrive jest dość proste i wykonuje się za pomocą programu diskpart. Po włączeniu tego programu należy za pomocą komendy <strong>list disk</strong> sprawdzić jak jest nazwany nasz pendrak, u mnie nazywa się disk 1. Potem w programie diskpart wpisujemy poniższą wiązankę:<br/><pre lang="Winbatch">diskpart <br/>select disk 1 <br/>clean <br/>create partition primary <br/>select partition 1 <br/>active <br/>format fs=fat32 <br/>assign <br/>exit</pre><br/>Po przygotowaniu dysku należy skopiować wszystkie pliki z obrazu iso na dysk usb. Można to wykonać za pomocą komendy xcopy. W moim przypadku wyglądało to tak :<br/><pre lang="Winbatch">xcopy G:\*.* /s/e/f H:\</pre><br/>Gdzie obraz iso był zamontowany pod literą G a pendrak pod literą H.<br/><br/>Po zakończeniu kopiowania można uruchomić ponownie komputer i w opcjach biosu wybrać ładowanie z dysku usb. Instalacja przebiega bezproblemowo.

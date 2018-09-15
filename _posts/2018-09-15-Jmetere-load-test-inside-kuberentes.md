@@ -41,7 +41,7 @@ When everything is deployed from the
 [kubernetes-jmeter](https://github.com/kaarolch/kubernetes-jmeter/tree/master/charts/jmeter)
 chart by default Grafana and InfluxDB pods are also deployed in the same namespace as jmeter.
 
-![kubernetes-jmeter architecture](https://github.com/kaarolch/kubernetes-jmeter/blob/master/images/kubernetes-jmeter_architecture.png)
+![kubernetes-jmeter architecture](https://github.com/kaarolch/kubernetes-jmeter/raw/master/images/kubernetes-jmeter_architecture.png){:class="img-responsive"}
 
 ## Installation
 Below there is a example run inside minikube. That deploy the whole stack with
@@ -54,7 +54,6 @@ helm dep update
 helm install -n test ./
 ```
 There is possibility to provide custom value yaml with `-f` flag.
-
 ```
 helm install install -n test ./ -f my_values.yaml
 ```
@@ -79,7 +78,7 @@ helm install install -n test ./ --set grafana.enabled=false,influxdb.enabled=fal
 ### Results
 
 ```
-✘ karol@albert > ~/repos/kubernetes-jmeter/charts/jmeter   master ●  helm status test
+✘ karol@albert > helm status test
 LAST DEPLOYED: Sat Sep 15 11:29:38 2018
 NAMESPACE: default
 STATUS: DEPLOYED
@@ -189,7 +188,7 @@ In this case chart attribute `oneShotTest` need to be set to `true`.
 
 ### Results
 ```
-karol@albert-ntp  ~/repos/kubernetes-jmeter   master ●  kubectl exec  -it $(kubectl get pod -l "app=jmeter-master" -o jsonpath='{.items[0].metadata.name}') -- sh -c 'ONE_SHOT=true; /run-test.sh'
+karol@albert > kubectl exec  -it $(kubectl get pod -l "app=jmeter-master" -o jsonpath='{.items[0].metadata.name}') -- sh -c 'ONE_SHOT=true; /run-test.sh'
 Sep 15, 2018 9:47:16 AM java.util.prefs.FileSystemPreferences$1 run
 INFO: Created user preferences directory.
 Creating summariser <summary>

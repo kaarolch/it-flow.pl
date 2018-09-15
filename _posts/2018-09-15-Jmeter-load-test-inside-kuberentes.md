@@ -1,6 +1,6 @@
 ---
 
-title: "[En] Jemter Load test inside kuberentes"
+title: "[En] Jmeter Load test inside kuberentes"
 date: '2018-09-15T09:53:00.000+02:00'
 tags:
 - Jmeter

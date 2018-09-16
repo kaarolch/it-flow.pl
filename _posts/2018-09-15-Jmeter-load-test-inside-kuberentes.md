@@ -7,6 +7,7 @@ tags:
 - Kubernetes
 - Helm
 - Load tests
+description: Jmeter load test automation inside kubernetes deployed via helm chart.
 ---
 I'm not a QA guy but sometimes I need to do a few load tests / checks for different
 projects. I know that Jmeter is not a perfect tool but it can do the job.
@@ -27,7 +28,7 @@ testing or testing automation.
 *   Master and slaves ship to kubernetes and run on demand (kubernetes-jmeter)
 is deployed this way.
 
-# Requirements
+## Requirements
 
 *   Kubernetes cluster > 1.10 or minikube instance
 *   Helm initialized on client and k8s cluster

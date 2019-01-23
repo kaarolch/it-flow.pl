@@ -17,3 +17,4 @@ classes: wide
 *   4th October 2018 - [Kubernetes - Pods, Edu4 Novomatic-tech](https://github.com/kaarolch/kubernetes-examples/tree/master/pods)
 *   24th October 2018 - [Kubernetes - The Story about containers orchestration](https://drive.google.com/open?id=1onQoeD5GIL2zulN9IPO3C13XlFpxbbcF), AGH       
 *   21th November 2018 - [Infrastructure as a code and Immutable Infrastructure](https://drive.google.com/file/d/1ioXEG70ohG68kvOZAh_BpCgDxNZh-DvW/view?usp=sharing), NovoTour AGH
+*   23th January 2019 - [Introduction to PKI base on CFSSL](https://docs.google.com/presentation/d/e/2PACX-1vRT3HA3aUUecurzkTSGnub_DVLcoNsK2YeqXcJHbJQ_0k9hi3Wj1jhaNK5eLTdzipoA1KG3mc07ctcP/pub?start=false&loop=false&delayms=3000), Lecture for AGH students
